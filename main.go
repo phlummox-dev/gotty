@@ -11,10 +11,10 @@ import (
 
 	"github.com/codegangsta/cli"
 
-	"github.com/yudai/gotty/backend/localcommand"
-	"github.com/yudai/gotty/pkg/homedir"
-	"github.com/yudai/gotty/server"
-	"github.com/yudai/gotty/utils"
+	"github.com/phlummox-dev/gotty/backend/localcommand"
+	"github.com/phlummox-dev/gotty/pkg/homedir"
+	"github.com/phlummox-dev/gotty/server"
+	"github.com/phlummox-dev/gotty/utils"
 )
 
 func main() {
