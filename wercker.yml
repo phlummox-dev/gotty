@@ -5,16 +5,39 @@ build:
     - setup-go-workspace
     - script:
         name: tools
-        code: make tools
-    - script:
-        name: test
-        code: make test
-    - script:
-        name: cross compile
-        code: make cross_compile OUTPUT_DIR=$WERCKER_OUTPUT_DIR
-    - script:
-        name: store Makefile
-        code: cp Makefile $WERCKER_OUTPUT_DIR/
+        code: |
+          set -x
+          set -euo pipefail
+
+          : "show id"
+
+          id
+
+          : "show pwd"
+
+          pwd
+
+          : "show ls"
+
+          ls -a
+
+          : "make version"
+
+          make --version
+
+          : "things in /go"
+
+          find -L /go
+
+          make tools
+
+          ls -a
+
+          make test
+
+          make cross_compile OUTPUT_DIR=$WERCKER_OUTPUT_DIR
+
+          cp Makefile $WERCKER_OUTPUT_DIR/
 
 deploy:
   steps:
